@@ -8,7 +8,7 @@ export DEST_FOLDER=/tmp
 
 case "$1" in
   build)
-	tar -czvf $ARTIFACT flask_hello
+	tar -czvf $ARTIFACT flasktest
 	;;
   test_connection)
 	ssh root@$DEST exit
