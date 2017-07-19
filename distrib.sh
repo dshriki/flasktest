@@ -2,7 +2,7 @@
 
 
 export DEST=10.0.2.15
-export BASE=flask_hello
+export BASE=flasktest
 export ARTIFACT="$BASE.tar.gz"
 export DEST_FOLDER=/tmp
 
