@@ -25,10 +25,10 @@ case "$1" in
 	;;
 
   extract)
-	ssh $DEST "rm -fr $DEST_FOLDER/$BASE"
-	ssh $DEST "tar -zxvf $DEST_FOLDER/$ARTIFACT -C $DEST_FOLDER/"
+	ssh root@$DEST "rm -fr $DEST_FOLDER/$BASE"
+	ssh root@$DEST "tar -zxvf $DEST_FOLDER/$ARTIFACT -C $DEST_FOLDER/"
 	;;
   setup)
-	ssh $DEST "/usr/local/bin/pip3 install venv"
+	ssh root@$DEST "/usr/local/bin/pip3 install venv"
 	;;
 esac
