@@ -1,7 +1,7 @@
 #!/bin/bash
 
 
-export DEST=172.16.120.130
+export DEST=10.0.2.15
 export BASE=flask_hello
 export ARTIFACT="$BASE.tar.gz"
 export DEST_FOLDER=/tmp
