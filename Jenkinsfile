@@ -5,11 +5,16 @@ pipeline {
       steps {
         parallel(
           "build": {
-            sh './distrib.sh build'
+            sh '''./distrib.sh build
+'''
             
           },
           "test_connection": {
             sh './distrib.sh test_connection'
+            
+          },
+          "test": {
+            sh 'echo "hello"'
             
           }
         )
