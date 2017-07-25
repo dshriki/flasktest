@@ -8,27 +8,17 @@ pipeline {
   stages {
     stage('build') {
       steps {
-        parallel(
-          "build": {
-            sh '''./distrib.sh build
-'''
-            
-          },
-          "test_connection": {
-            sh './distrib.sh test_connection'
-            
-          },
-          "test": {
-            sh 'echo "hello"'
-            
+	    sh 'apt install python3-pip'
+	    sh 'git clone https://github.com/dshriki/flasktest.git'
+            sh 'pip3 install -r flasktest/flasktest/requirements.txt'
           }
-        )
-      }
+        
+      
     }
-    stage('setup') {
+    stage('test') {
       steps {
-        sh './distrib.sh copy'
-        sh './distrib.sh extract'
+        sh 'python3 flasktest/flasktest/run.py &'
+        sh 'curl -f -I http://localhost:5555/'
       }
     }
   }
