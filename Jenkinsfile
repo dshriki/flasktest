@@ -8,7 +8,7 @@ pipeline {
   stages {
     stage('build') {
       steps {
-        sh 'apt install python3-pip'
+        sh 'sudo apt install python3-pip'
         sh 'git clone https://github.com/dshriki/flasktest.git'
         sh 'pip3 install -r flasktest/flasktest/requirements.txt'
       }
