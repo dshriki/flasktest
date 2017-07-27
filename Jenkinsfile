@@ -7,7 +7,9 @@ pipeline {
   }
   stages {
     stage('build') {
+	steps{
 	sh 'mkdir test-slave'
+	}	
       }
     }
 }
