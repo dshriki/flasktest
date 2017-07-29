@@ -32,6 +32,7 @@ pipeline {
     stage('deploy') {
       steps {
         sh 'docker run -d --network=build-network --ip=172.25.1.1 --name hello hello:0.0.1'
+        sleep 15
       }
     }
     stage('prod-test') {
